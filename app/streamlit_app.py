@@ -201,12 +201,6 @@ html, body, [class*="css"] { font-family: 'Lato', sans-serif; }
     letter-spacing: 2px; text-transform: uppercase; margin-top: 0.4rem;
 }
 
-.upload-card {
-    background: #ffffff; border: 1.5px solid #d6e4c4;
-    border-radius: 16px; padding: 2rem; margin: 1.5rem 0;
-    box-shadow: 0 4px 24px rgba(45,74,30,0.07);
-}
-
 section[data-testid="stFileUploadDropzone"] {
     background: #f9faf4 !important;
     border: 2px dashed #b5cc96 !important;
@@ -329,12 +323,10 @@ st.markdown("""
 
 model, class_names = load_model_and_classes()
 
-st.markdown('<div class="upload-card">', unsafe_allow_html=True)
 uploaded = st.file_uploader(
     "Upload a clear, close-up photo of a single leaf",
     type=["jpg", "jpeg", "png", "webp"],
 )
-st.markdown('</div>', unsafe_allow_html=True)
 
 if uploaded:
     img = Image.open(uploaded).convert("RGB")
