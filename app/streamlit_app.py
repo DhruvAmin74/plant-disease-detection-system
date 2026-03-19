@@ -280,8 +280,8 @@ section[data-testid="stFileUploadDropzone"] {
 @st.cache_resource(show_spinner="Loading model…")
 def load_model_and_classes():
     import keras
-    model_path   = Path("plant_disease_efficientnet.keras")
-    classes_path = Path("class_names.json")
+    model_path   = Path("model/plant_disease_efficientnet.keras")
+    classes_path = Path("model/class_names.json")
     if not model_path.exists():
         st.error("❌ `plant_disease_efficientnet.keras` not found.")
         st.stop()
